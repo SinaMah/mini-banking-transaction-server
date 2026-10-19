@@ -206,16 +206,6 @@ The required deployment uses a server VM and a separate client VM connected to t
 6. Start the server bound to `0.0.0.0`; check `ping -c 3 <SERVER_IP>` and a banking HTTP request from the client. Blocked ping alone is inconclusive. If UFW is active, record and add only a TCP/8000 rule scoped to the actual client IP; do not disable the firewall. Remove only your added rule later.
 7. Follow `DEMO_GUIDE.md` for normal operations, concurrency, all errors, logs, rollback and crash/restart. Show both VM windows and fill the report's actual-observation fields.
 
-## Submission, limitations and cleanup
-
-Use a private lab network. Authentication, encrypted server deployment, replication, failover, transfers and exactly-once retries are not implemented. Bonuses are proposals. Complete the report's VM fields, export at most five A4 pages, record a video no longer than five minutes and submit source/dependency files through GitHub/LMS as required. Deployment, recording and submission are not claimed here.
-
-After grading, preserve submission copies, stop foreground server/tail commands, run `deactivate`, confirm the exact folder and delete the project using Ubuntu's file manager. Remove only recorded temporary firewall/network changes. Keep preexisting system packages.
-
-Remove a separately created client VM only after powering it off and checking its name/storage paths. Preserve the existing Ubuntu VM and all base disks/snapshots required by linked clones; check VirtualBox dependencies before removal.
-
-Guest deletion frees Ubuntu space but may not shrink a dynamically allocated disk on Windows. Linked clones/base disks may also retain allocation. Exact Windows free-space restoration is not promised. Discard/compaction is not automated; avoid zero-filling a guest on a nearly full host drive.
-
 ## References
 
 - [SQLite isolation](https://www.sqlite.org/isolation.html)
